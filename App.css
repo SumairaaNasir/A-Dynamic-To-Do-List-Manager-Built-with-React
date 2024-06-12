@@ -1,0 +1,242 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+/* Global Styles */
+body {
+  background-color: #e0e0e0; 
+  background-image: url('https://img.freepik.com/free-vector/winter-blue-pink-gradient-background-vector_53876-117276.jpg');
+  background-size: cover; /* Ensure background image covers the entire body */
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Use min-height instead of height */
+}
+
+
+h1 {
+  text-align: center;
+  color: #444;
+}
+
+/* Todo Wrapper */
+.todo-wrapper {
+  background: #fff;
+  padding: 2%;
+  width: 100%;
+  max-width: 600px;
+  margin-top: 3%;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+}
+.todo-title {
+  background: linear-gradient(135deg, #6a6969, #080808); 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.todo-input {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.todo-input-item {
+  flex: 1 1 calc(30% - 10px); 
+}
+
+.priority-container {
+  flex: 1 1 calc(5% - 5px); 
+  margin-top: 10px; 
+}
+
+
+.todo-input-item input,
+.todo-input-item textarea,
+.todo-input-item select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background: #fafafa;
+  font-family: 'Roboto', sans-serif;
+}
+
+.todo-input-item label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.primaryBtn,
+.secondaryBtn {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.primaryBtn {
+  background: #34ab4f;
+}
+
+.primaryBtn:hover {
+  background: #2a8e3b;
+}
+
+.secondaryBtn {
+  background: #444242;
+  margin-right: 10px;
+}
+
+.secondaryBtn:hover {
+  background: #363434;
+}
+
+.active {
+  background: #5a5959;
+}
+
+/* Todo List */
+.todo-list {
+  margin-top: 20px;
+}
+
+.todo-list-item {
+  background: #fafafa;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border-left: 4px solid transparent;
+  transition: background 0.3s ease, border-color 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.todo-list-item:hover {
+  background: #f1f1f1;
+}
+
+.high {
+  border-left-color: #ff5252;
+}
+
+.medium {
+  border-left-color: #ffd700;
+}
+
+.low {
+  border-left-color: #4caf50;
+}
+
+.priority-label {
+  font-size: 0.85em;
+  background: #444242;
+  padding: 2px 5px;
+  border-radius: 3px;
+  color: white;
+  display: inline-block;
+}
+
+.icon,
+.check-icon {
+  margin-left: 10px;
+  cursor: pointer;
+  font-size: 1.2em;
+  color: #666;
+  transition: color 0.3s ease;
+}
+
+.icon:hover,
+.check-icon:hover {
+  color: #333;
+}
+
+.clearBtn {
+  background: #f44336;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  display: block;
+  margin: 20px auto;
+  transition: background 0.3s ease;
+}
+
+.clearBtn:hover {
+  background: #d7352c;
+}
+
+/* Animation Classes */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes complete {
+  0% {
+    background-color: #fafafa;
+  }
+  100% {
+    background-color: #e0ffe0;
+  }
+}
+
+.add-animation {
+  animation: slideIn 0.5s ease forwards;
+}
+
+.delete-animation {
+  animation: slideOut 0.5s ease forwards;
+}
+
+.complete-animation {
+  animation: complete 0.5s ease forwards;
+}
+
+.edit__wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  animation: slideIn 0.3s ease forwards;
+}
